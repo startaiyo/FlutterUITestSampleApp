@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,6 +20,11 @@ class MyApp extends StatelessWidget {
   }
 }
 
+@UseCase(
+  designLink: 'https://www.figma.com/design/YSoR7FTfQm3rujz9RJWbAt/Desh?node-id=643-69&t=RvTUiXg6ickOIBiy-4',
+  name: 'Default',
+  type: AppBar
+)
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
