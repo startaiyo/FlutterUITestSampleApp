@@ -23,7 +23,7 @@ class LoginButton extends StatelessWidget {
           elevation: 0,
         ),
         child: const Text(
-          'Login',
+          'LoginButton',
           style: TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.bold,
