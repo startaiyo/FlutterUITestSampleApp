@@ -18,14 +18,14 @@ class LoginButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           backgroundColor: const Color(0xFFFFACAC),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(25),
+            borderRadius: BorderRadius.circular(10),
           ),
           elevation: 0,
         ),
         child: const Text(
-          'Login',
+          'LoginTapME',
           style: TextStyle(
-            color: Colors.black,
+            color: Colors.yellow,
             fontWeight: FontWeight.bold,
             fontSize: 32,
           ),
