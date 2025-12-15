@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:widgetbook_annotation/widgetbook_annotation.dart';
+import 'package:sample_ui_test_app/login_button.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,11 +20,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-@UseCase(
-  designLink: 'https://www.figma.com/design/YSoR7FTfQm3rujz9RJWbAt/Desh?node-id=643-69&t=RvTUiXg6ickOIBiy-4',
-  name: 'Default',
-  type: LoginScreen
-)
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -162,28 +157,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 const SizedBox(height: 32),
                 // Login Button
-                SizedBox(
-                  width: double.infinity,
-                  height: 50,
-                  child: ElevatedButton(
-                    onPressed: _handleLogin,
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFFFFACAC),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                      elevation: 0,
-                    ),
-                    child: const Text(
-                      'Login',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                      ),
-                    ),
-                  ),
-                ),
+                LoginButton(onPressed: _handleLogin),
               ],
             ),
           ),
