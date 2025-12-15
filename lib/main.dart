@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sample_ui_test_app/login_button.dart';
+import 'package:sample_ui_test_app/login_form.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,39 +28,10 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  late TextEditingController _emailController;
-  late TextEditingController _passwordController;
-
-  @override
-  void initState() {
-    super.initState();
-    _emailController = TextEditingController();
-    _passwordController = TextEditingController();
-  }
-
-  @override
-  void dispose() {
-    _emailController.dispose();
-    _passwordController.dispose();
-    super.dispose();
-  }
-
   void _handleLogin() {
-    final email = _emailController.text.trim();
-    final password = _passwordController.text;
-
-    if (email.isEmpty || password.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Please fill in all fields'),
-        ),
-      );
-      return;
-    }
-
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('Login successful for $email'),
+      const SnackBar(
+        content: Text('Login successful!'),
       ),
     );
   }
@@ -90,74 +61,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                 ),
                 const SizedBox(height: 40),
-                // Email Field
-                TextField(
-                  controller: _emailController,
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: InputDecoration(
-                    hintText: 'example@mail.com',
-                    filled: true,
-                    fillColor: const Color(0xFFD9D9D9),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      borderSide: BorderSide.none,
-                    ),
-                    contentPadding: const EdgeInsets.symmetric(
-                      horizontal: 16,
-                      vertical: 16,
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 16),
-                // Password Field
-                TextField(
-                  controller: _passwordController,
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    hintText: 'password',
-                    filled: true,
-                    fillColor: const Color(0xFFD9D9D9),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      borderSide: BorderSide.none,
-                    ),
-                    contentPadding: const EdgeInsets.symmetric(
-                      horizontal: 16,
-                      vertical: 16,
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 16),
-                // Register Link
-                GestureDetector(
-                  onTap: () {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Navigate to register')),
-                    );
-                  },
-                  child: Text.rich(
-                    TextSpan(
-                      text: "If you're new user, please ",
-                      style: const TextStyle(
-                        color: Colors.black,
-                        fontSize: 14,
-                      ),
-                      children: [
-                        TextSpan(
-                          text: 'register',
-                          style: const TextStyle(
-                            color: Colors.blue,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 32),
-                // Login Button
-                LoginButton(onPressed: _handleLogin),
+                // Login Form with controllers managed internally
+                LoginForm(onLoginPressed: _handleLogin),
               ],
             ),
           ),
