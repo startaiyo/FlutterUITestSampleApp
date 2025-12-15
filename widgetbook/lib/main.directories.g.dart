@@ -32,7 +32,7 @@ final directories = <_widgetbook.WidgetbookNode>[
     name: 'LoginForm',
     useCases: [
       _widgetbook.WidgetbookUseCase(
-        name: 'Default',
+        name: 'LoginForm',
         builder: _widgetbook_workspace_login_form.buildLoginFormUseCase,
         designLink:
             'https://www.figma.com/design/YSoR7FTfQm3rujz9RJWbAt/Desh?node-id=643-69&t=RvTUiXg6ickOIBiy-4',

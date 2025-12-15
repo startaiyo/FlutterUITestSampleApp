@@ -4,7 +4,7 @@ import 'package:sample_ui_test_app/login_form.dart';
 
 @widgetbook.UseCase(
   designLink: 'https://www.figma.com/design/YSoR7FTfQm3rujz9RJWbAt/Desh?node-id=643-69&t=RvTUiXg6ickOIBiy-4',
-  name: 'Default',
+  name: 'LoginForm',
   type: LoginForm
 )
 Widget buildLoginFormUseCase(BuildContext context) {
