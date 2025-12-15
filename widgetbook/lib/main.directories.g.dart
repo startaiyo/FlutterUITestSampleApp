@@ -21,6 +21,8 @@ final directories = <_widgetbook.WidgetbookNode>[
       _widgetbook.WidgetbookUseCase(
         name: 'Default',
         builder: _widgetbook_workspace_login_button.buildLoginButtonUseCase,
+        designLink:
+            'https://www.figma.com/design/YSoR7FTfQm3rujz9RJWbAt/Desh?node-id=650-83&t=RvTUiXg6ickOIBiy-4',
       ),
     ],
   ),
